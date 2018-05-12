@@ -9,5 +9,5 @@ Sidebar that you can access to get to
 4. Map
 5. Partners
 6. Slack ✓
-7. Check In (QR Code Generation)
-8. Settings
+7. Check In (QR Code Generation) ✓
+8. Settings ✓
