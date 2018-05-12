@@ -16,6 +16,8 @@ import {
   TextInput
 } from 'react-native';
 import Toast from 'react-native-simple-toast';
+import Spinner from 'react-native-loading-spinner-overlay';
+
 type Props = {};
 export default class Settings extends Component<Props> {
 	static navigationOptions = {

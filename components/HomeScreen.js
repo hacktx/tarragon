@@ -11,8 +11,11 @@ import {
   Text,
   View,
   Button,
-  Image
+  Image,
+  AsyncStorage
 } from 'react-native';
+import Modal from "react-native-modal";
+import Spinner from 'react-native-loading-spinner-overlay';
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' +
@@ -32,9 +35,35 @@ export default class HomeScreen extends Component<Props> {
 	      />
 	    ),
   };
+  constructor(props){
+      super(props)
+      this.state = {
+          visible: false,
+          showModal: false,
+      }
+  }
+  componentWillMount(){
+      this.setState({visible: true})
+      AsyncStorage.getItem('firsttime').then((value) =>
+        {
+            if(value === null || value === undefined){
+                this.setState({showModal: true})
+            }
+            else{
+                this.setState({showModal: false})
+            }
+            this.setState({visible: false})
+        })
+  }
   render() {
     return (
       <View style={styles.container}>
+      <Spinner visible={this.state.visible} textContent={"Loading..."} textStyle={{color: '#FFF'}}/>
+      <Modal isVisible={this.state.showModal}>
+        <View style={{ flex: 1 }}>
+          <Text>{this.state.modalContent}</Text>
+        </View>
+      </Modal>
         <Text style={styles.welcome}>
           Welcome to React Native!
         </Text>
