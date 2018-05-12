@@ -9,7 +9,9 @@ import {
   Platform,
   StyleSheet,
   Text,
-  View
+  View,
+  Button,
+  Image
 } from 'react-native';
 
 const instructions = Platform.select({
@@ -20,7 +22,16 @@ const instructions = Platform.select({
 });
 
 type Props = {};
-export default class App extends Component<Props> {
+export default class HomeScreen extends Component<Props> {
+	static navigationOptions = {
+	    drawerLabel: 'Home',
+	    drawerIcon: ({ tintColor }) => (
+	      <Image
+	        source={require('./sidebar-icon.png')}
+	        style={[styles.icon, {tintColor: tintColor}]}
+	      />
+	    ),
+  };
   render() {
     return (
       <View style={styles.container}>
@@ -55,4 +66,8 @@ const styles = StyleSheet.create({
     color: '#333333',
     marginBottom: 5,
   },
+  icon: {
+    width: 24,
+    height: 24,
+  }
 });

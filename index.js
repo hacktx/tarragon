@@ -1,4 +1,17 @@
 import { AppRegistry } from 'react-native';
-import App from './App';
+import {
+  StackNavigator,
+  createDrawerNavigator
+} from 'react-navigation';
+import HomeScreen from './components/HomeScreen'
+import Slack from './components/Slack'
 
-AppRegistry.registerComponent('tarragon', () => App);
+
+
+const tarragon = createDrawerNavigator({
+  Home: { screen: HomeScreen },
+  Slack: {screen: Slack}
+});
+
+
+AppRegistry.registerComponent('tarragon', () => tarragon);
