@@ -28,7 +28,7 @@ export default class Slack extends Component<Props> {
 	    ),
   };
 	componentDidMount() {
-		Linking.openURL(API.Slack, this._handleOpenURL);
+		Linking.openURL(API.Slack);
 		this.props.navigation.navigate('Home')
 	}
   render() {

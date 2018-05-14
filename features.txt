@@ -1,7 +1,3 @@
-Enter Home Screen. Enter screen2. Notification to use our slack channel.
-
-
-
 Sidebar that you can access to get to
 1. Schedule
 2. Announcements

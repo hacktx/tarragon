@@ -39,24 +39,24 @@ export default class Settings extends Component<Props> {
   }
   componentWillMount(){
 	  this.setState({visible: true})
-      AsyncStorage.getItem('email').then((value) =>
-        {
-            console.log(value)
-            if(value === null || value === undefined){
-                this.setState({email: ""})
-            }
-            else{
-                this.setState({email: value})
-            }
-            this.setState({visible: false})
-        })
+    AsyncStorage.getItem('email').then((value) =>
+      {
+          console.log(value)
+          if(value === null || value === undefined){
+              this.setState({email: ""})
+          }
+          else{
+              this.setState({email: value})
+          }
+          this.setState({visible: false})
+      })
   }
   onSettingsSave(){
 	  this.setState({visible: true})
-	  AsyncStorage.setItem('email', this.state.email), ()=>{
+	  AsyncStorage.setItem('email', this.state.email, ()=>{
 		  Toast.show('Email successfully saved.');
 		  this.setState({visible: false})
-	  }
+	  })
   }
 
   render() {

@@ -7,6 +7,7 @@ import HomeScreen from './components/HomeScreen'
 import Slack from './components/Slack'
 import Settings from './components/Settings'
 import Checkin from './components/Checkin'
+import './ReactotronConfig'
 
 
 
