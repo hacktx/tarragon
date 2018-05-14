@@ -2,7 +2,7 @@ Sidebar that you can access to get to
 1. Schedule
 2. Announcements
 3. Twitter
-4. Map
+4. Map ✓
 5. Partners
 6. Slack ✓
 7. Check In (QR Code Generation) ✓

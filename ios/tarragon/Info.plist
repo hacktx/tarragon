@@ -38,6 +38,18 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
+	<key>LSApplicationQueriesSchemes</key>
+    <array>
+        <string>comgooglemaps</string>
+        <string>citymapper</string>
+        <string>uber</string>
+        <string>lyft</string>
+        <string>navigon</string>
+        <string>transit</string>
+        <string>waze</string>
+        <string>yandexnavi</string>
+        <string>moovit</string>
+    </array>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string></string>
 	<key>NSAppTransportSecurity</key>

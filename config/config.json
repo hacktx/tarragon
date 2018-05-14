@@ -1,3 +1,7 @@
 {
-	"Slack": "slack://channel?team=T3JEBPEDP&id=C3K4X1FM0"
+	"Slack": "slack://channel?team=T3JEBPEDP&id=C3K4X1FM0",
+	"Maps": {
+		"Latitude": "30.2689714",
+		"Longitude": "-97.7403266"
+	}
 }
