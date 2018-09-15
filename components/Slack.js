@@ -20,16 +20,11 @@ type Props = {};
 export default class Slack extends Component<Props> {
 	static navigationOptions = {
 	    drawerLabel: 'Slack',
-	    drawerIcon: ({ tintColor }) => (
-	      <Image
-	        source={require('./sidebar-icon.png')}
-	        style={[styles.icon, {tintColor: tintColor}]}
-	      />
-	    ),
+      title: 'Slack'
   };
 	componentDidMount() {
 		Linking.openURL(API.Slack);
-		this.props.navigation.navigate('Home')
+		this.props.navigation.navigate('Schedule')
 	}
   render() {
     return (

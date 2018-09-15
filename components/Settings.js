@@ -22,12 +22,7 @@ type Props = {};
 export default class Settings extends Component<Props> {
 	static navigationOptions = {
 	    drawerLabel: 'Settings',
-	    drawerIcon: ({ tintColor }) => (
-	      <Image
-	        source={require('./sidebar-icon.png')}
-	        style={[styles.icon, {tintColor: tintColor}]}
-	      />
-	    ),
+      title: 'Settings'
   };
   constructor(props){
 	  super(props)

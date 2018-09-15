@@ -22,17 +22,12 @@ type Props = {};
 export default class Twitter extends Component<Props> {
 	static navigationOptions = {
 	    drawerLabel: 'Twitter',
-	    drawerIcon: ({ tintColor }) => (
-	      <Image
-	        source={require('./sidebar-icon.png')}
-	        style={[styles.icon, {tintColor: tintColor}]}
-	      />
-	    ),
+      title: 'Twitter'
   };
 	componentDidMount() {
     var url = "https://twitter.com/" + API.Twitter
     Linking.openURL(url)
-    this.props.navigation.navigate('Home')
+    this.props.navigation.navigate('Schedule')
 	}
   render() {
     return (

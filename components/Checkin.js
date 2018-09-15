@@ -23,12 +23,7 @@ type Props = {};
 export default class Checkin extends Component<Props> {
 	static navigationOptions = {
 	    drawerLabel: 'Check In',
-	    drawerIcon: ({ tintColor }) => (
-	      <Image
-	        source={require('./sidebar-icon.png')}
-	        style={[styles.icon, {tintColor: tintColor}]}
-	      />
-	  )
+      title: 'Check In'
   };
   constructor(props){
       super(props)

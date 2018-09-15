@@ -23,17 +23,12 @@ type Props = {};
 export default class Map extends Component<Props> {
 	static navigationOptions = {
 	    drawerLabel: 'Venue',
-	    drawerIcon: ({ tintColor }) => (
-	      <Image
-	        source={require('./sidebar-icon.png')}
-	        style={[styles.icon, {tintColor: tintColor}]}
-	      />
-	    ),
+      title: 'Venue'
   };
 	componentDidMount() {
     var url = "http://maps.google.com/maps?z=32&q=loc:" + API.Maps.Latitude + "," + API.Maps.Longitude
     Linking.openURL(url)
-    this.props.navigation.navigate('Home')
+    this.props.navigation.navigate('Schedule')
 	}
   render() {
     return (
