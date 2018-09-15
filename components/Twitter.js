@@ -16,13 +16,12 @@ import {
   Linking
 } from 'react-native';
 import API from '../config/config.json'
-import { showLocation } from 'react-native-map-link'
 
 
 type Props = {};
-export default class Map extends Component<Props> {
+export default class Twitter extends Component<Props> {
 	static navigationOptions = {
-	    drawerLabel: 'Venue',
+	    drawerLabel: 'Twitter',
 	    drawerIcon: ({ tintColor }) => (
 	      <Image
 	        source={require('./sidebar-icon.png')}
@@ -31,7 +30,7 @@ export default class Map extends Component<Props> {
 	    ),
   };
 	componentDidMount() {
-    var url = "http://maps.google.com/maps?z=32&q=loc:" + API.Maps.Latitude + "," + API.Maps.Longitude
+    var url = "https://twitter.com/" + API.Twitter
     Linking.openURL(url)
     this.props.navigation.navigate('Home')
 	}
@@ -39,7 +38,7 @@ export default class Map extends Component<Props> {
     return (
       <View style={styles.container}>
         <Text style={styles.welcome}>
-          Maps
+          Twitter
         </Text>
       </View>
     );

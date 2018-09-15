@@ -8,13 +8,15 @@ import Slack from './components/Slack'
 import Settings from './components/Settings'
 import Checkin from './components/Checkin'
 import Map from './components/Maps'
+import Twitter from './components/Twitter'
 
 
 const tarragon = createDrawerNavigator({
   Home: { screen: HomeScreen },
   Slack: {screen: Slack},
+  Twitter: {screen: Twitter},
   Checkin: {screen: Checkin},
-  Map: {screen: Map},
+  Venue: {screen: Map},
   Settings: {screen: Settings}
 });
 

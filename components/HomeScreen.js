@@ -29,15 +29,6 @@ const instructions = Platform.select({
     'Shake or press menu button for dev menu',
 });
 
-function saveTime(){
-  try{
-    AsyncStorage.setItem('firsttime', 'plssave')
-  }
-  catch(error){
-    console.log(error)
-  }
-}
-
 export default class HomeScreen extends Component{
 	static navigationOptions = {
 	    drawerLabel: 'Home',
@@ -64,6 +55,7 @@ export default class HomeScreen extends Component{
       this.setState({visible: true, modalReady: false, modalState: true}, () =>{
         AsyncStorage.getItem('firsttime').then((value) =>
           {
+              console.log(value)
               if(value === null || value === undefined){
                   this.setState({showModal: true})
               }
@@ -71,10 +63,9 @@ export default class HomeScreen extends Component{
                   this.setState({showModal: false})
               }
               this.setState({visible: false, modalReady: true})
+              AsyncStorage.setItem('firsttime', 'plssave')
           })
-
       })
-      saveTime()
   }
   _goNext(){
     if(this.state.input_email == undefined || this.state.input_email.includes("@") == false){
@@ -105,6 +96,7 @@ export default class HomeScreen extends Component{
             <Text style={{textAlign: "center", fontSize: 20}}>Welcome to HackTX</Text>
             <Text style={{fontSize: 30}}>{"\n"}</Text>
             <Text style={{textAlign: "center"}}>Let&#39;s get started.</Text>
+            <Text style={{textAlign: "center"}}>What&#39;s your email (Please use the email you signed up for HackTX with)?</Text>
             <TextInput
               style={{height: 40}}
               onChangeText={(input_email) => this.setState({input_email})}
