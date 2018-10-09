@@ -7,3 +7,7 @@ Sidebar that you can access to get to
 6. Slack ✓
 7. Check In (QR Code Generation) ✓
 8. Settings ✓
+
+
+Home Screen:
+ListView ScrollView List of events, GET request to /api/schedule

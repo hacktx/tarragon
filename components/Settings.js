@@ -58,19 +58,24 @@ export default class Settings extends Component<Props> {
     return (
       <View style={styles.container}>
 	  <Spinner visible={this.state.visible} textContent={"Loading..."} textStyle={{color: '#FFF'}}/>
-        <Text style={styles.welcome}>
-          Settings
-        </Text>
-		<Text>{"\n"}Change email:{"\n"}</Text>
+		<Text style={styles.changeText}>{"\n"}Change email:{"\n"}</Text>
+    <Text style={styles.infoText}>This email will be used to generate the QR code for check in. This information is only stored on your device.</Text>
 		<TextInput
         style={{height: 40}}
         onChangeText={(email) => this.setState({email})}
         value={this.state.email}
       />
 	  <Button
+    color='#7BA9F9'
 		  onPress={this.onSettingsSave}
 		  title="Save Email"
 		/>
+    <View style={styles.container2}>
+    <Text style={styles.licenses}>About</Text>
+    <Text style={styles.infoText}>Tarragon v1.0.0</Text>
+
+
+    </View>
       </View>
     );
   }
@@ -79,9 +84,13 @@ export default class Settings extends Component<Props> {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#F5FCFF',
+    backgroundColor: 'white',
+  },
+  container2: {
+    marginTop: 30,
+    alignItems: 'center',
+    backgroundColor: 'white',
   },
   welcome: {
     fontSize: 20,
@@ -96,5 +105,24 @@ const styles = StyleSheet.create({
   icon: {
     width: 24,
     height: 24,
+  },
+  changeText: {
+    fontSize: 18,
+    color: 'black',
+    marginBottom: 10
+  },
+  infoText: {
+    marginLeft: 10,
+    marginRight: 10,
+    marginBottom: 10,
+    color: '#FF4115',
+    textAlign: 'center'
+  },
+  licenses: {
+    fontSize: 18,
+    marginTop: 30,
+    marginBottom: 20,
+    color: 'black',
+    textAlign: 'center'
   }
 });

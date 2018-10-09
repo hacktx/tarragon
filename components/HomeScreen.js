@@ -120,15 +120,14 @@ export default class HomeScreen extends Component{
         </Modal>
       }
     }
+
+    let schedule = null;
+
+
     return (
       <View style={styles.container}>
       {modal}
-        <Text style={styles.welcome}>
-          Welcome to React Native!
-        </Text>
-        <Text style={styles.instructions}>
-          To get started, edit App.js
-        </Text>
+      {schedule}
       </View>
     );
   }
