@@ -73,6 +73,8 @@ export default class Settings extends Component<Props> {
     <View style={styles.container2}>
     <Text style={styles.licenses}>About</Text>
     <Text style={styles.infoText}>Tarragon v1.0.0</Text>
+    <Text style={styles.licensing}>Tarragon is open source licensed under the MIT license.</Text>
+    <Text style={styles.licensing}>Source code for Tarragon can be found on Github in hacktx/tarragon.</Text>
 
 
     </View>
@@ -121,8 +123,14 @@ const styles = StyleSheet.create({
   licenses: {
     fontSize: 18,
     marginTop: 30,
-    marginBottom: 20,
+    marginBottom: 15,
     color: 'black',
     textAlign: 'center'
-  }
+  },
+  licensing: {
+    marginLeft: 10,
+    marginRight: 10,
+    marginBottom: 10,
+    textAlign: 'center'
+  },
 });

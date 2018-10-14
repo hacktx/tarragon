@@ -51,13 +51,14 @@ export default class Checkin extends Component<Props> {
       if(!this.state.visible){
           qrCode = <QRCode
             value={this.state.email}
+            size={200}
           />
       }
     return (
       <View style={styles.container}>
       <Spinner visible={this.state.visible} textContent={"Loading..."} textStyle={{color: '#FFF'}}/>
         <Text style={styles.welcome}>
-          Checkin
+          Show this QR code to get checked into HackTX. It relies on the email you signed up to HackTX with. This email can be changed at any time in the Settings panel.
         </Text>
         {qrCode}
       </View>
@@ -68,14 +69,14 @@ export default class Checkin extends Component<Props> {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#F5FCFF',
+    backgroundColor: 'white'
   },
   welcome: {
     fontSize: 20,
     textAlign: 'center',
-    margin: 10,
+    margin: 20,
+    color:'#203E5B',
   },
   instructions: {
     textAlign: 'center',
