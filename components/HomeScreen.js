@@ -83,10 +83,10 @@ export default class HomeScreen extends Component{
         modal = <Modal isVisible={this.state.showModal}>
           <View style={{ flex: 1, justifyContent: "center", alignItems: "center"}}>
           <View style={{padding:70, backgroundColor: 'white'}}>
-            <Text style={{textAlign: "center", fontSize: 20}}>Welcome to HackTX</Text>
-            <Text style={{fontSize: 30}}>{"\n"}</Text>
+            <Text style={{textAlign: "center", fontSize: 25}}>Welcome to HackTX</Text>
+            <Image source={require('./resized_header.png')} style={{marginTop: 10,marginLeft:15, marginBottom: 10,resizeMode:'contain', width: 200, height:50}} />
             <Text style={{textAlign: "center"}}>Let&#39;s get started.</Text>
-            <Text style={{textAlign: "center"}}>What&#39;s your email (Please use the email you signed up for HackTX with)?</Text>
+            <Text style={{textAlign: "center"}}>What&#39;s your email? (Please use the email you signed up for HackTX with)</Text>
             <TextInput
               style={{height: 40}}
               onChangeText={(input_email) => this.setState({input_email})}
@@ -106,11 +106,11 @@ export default class HomeScreen extends Component{
         modal = modal = <Modal isVisible={this.state.showModal}>
           <View style={{ flex: 1, justifyContent: "center", alignItems: "center"}}>
           <View style={{padding:70, backgroundColor: 'white'}}>
-            <Text style={{textAlign: "center", fontSize: 20}}>Join the HackTX 2018 Attendees Slack Channel</Text>
+            <Text style={{textAlign: "center", fontSize: 20}}>Join the HackTX 2018 Slack Channel</Text>
             <Text style={{textAlign: "center"}}>{"\n"}Join the channel for important updates!</Text>
             <Text style={{fontSize: 10}}>{"\n"}</Text>
             <Button
-            onPress={()=> {Linking.openURL(API.Slack); this.setState({showModal: false})}}
+            onPress={()=> {Linking.openURL(API.Slack_Invite); this.setState({showModal: false})}}
             title="Join Slack"
           />
           <Text style={{fontSize: 10}}>{"\n"}</Text>

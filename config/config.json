@@ -1,5 +1,6 @@
 {
 	"Slack": "slack://channel?team=UD9NBQATB&id=C7K7Z9TFS",
+	"Slack_Invite": "https://join.slack.com/t/hacktx18/shared_invite/enQtNDU1MzUxOTY5MTA1LTFhMzllNjEwMjRlNWJmMzRjMWM4ZDRmNmU1MDQxMTFjZDVjMjlkZTNmZmM2YzNiMWNjZDU3Y2NmZDEyZDk5NjI",
 	"Maps": {
 		"Latitude": "30.2819957",
 		"Longitude": "-97.7406333"
