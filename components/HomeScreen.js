@@ -15,7 +15,8 @@ import {
   AsyncStorage,
   TouchableOpacity,
   TextInput,
-  Linking
+  Linking,
+  FlatList
 } from 'react-native';
 import Modal from "react-native-modal";
 import Spinner from 'react-native-loading-spinner-overlay';
@@ -37,7 +38,8 @@ export default class HomeScreen extends Component{
           modalState: true,
           input_email: "",
           modalReady: false,
-          time: "asdjsad"
+          time: "asdjsad",
+          schedule_data: null,
       }
       this._goNext = this._goNext.bind(this);
   }
@@ -56,6 +58,13 @@ export default class HomeScreen extends Component{
               AsyncStorage.setItem('firsttime', 'plssave')
           })
       })
+      fetch("https://my.hacktx.com/api/schedule").then(response => response.json())
+      .then(responseJson => {
+        console.log(responseJson)
+        this.setState({schedule_data: responseJson})
+      })
+
+
   }
   _goNext(){
     if(this.state.input_email == undefined || this.state.input_email.includes("@") == false){
@@ -121,13 +130,20 @@ export default class HomeScreen extends Component{
       }
     }
 
-    let schedule = null;
 
 
     return (
       <View style={styles.container}>
       {modal}
-      {schedule}
+      <View style={styles.events}>
+      <FlatList data={this.state.schedule_data} renderItem={({item}) =>
+      <View style={styles.scheduleItem}><Text style={styles.time}>{item.name}</Text>
+      {item.eventsList.map((event) =>
+      <View style = {styles.eventItem}>
+        <Text style={styles.eventName}>{event.name}</Text>
+        <Text style={styles.description}>{event.description}</Text></View>)}
+      </View>}/>
+      </View>
       </View>
     );
   }
@@ -153,5 +169,25 @@ const styles = StyleSheet.create({
   icon: {
     width: 24,
     height: 24,
+  },
+  events: {
+    marginTop: 10
+  },
+  time: {
+    fontSize: 30
+  },
+  scheduleItem: {
+    marginLeft: 10,
+    marginBottom: 20,
+    marginRight: 10
+  },
+  eventName: {
+    fontSize: 20
+  },
+  description: {
+
+  },
+  eventItem: {
+    marginBottom: 10
   }
 });
