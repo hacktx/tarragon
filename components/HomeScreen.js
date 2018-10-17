@@ -47,7 +47,6 @@ export default class HomeScreen extends Component{
       this.setState({visible: true, modalReady: false, modalState: true}, () =>{
         AsyncStorage.getItem('firsttime').then((value) =>
           {
-              console.log(value)
               if(value === null || value === undefined){
                   this.setState({showModal: true})
               }
@@ -60,7 +59,6 @@ export default class HomeScreen extends Component{
       })
       fetch("https://my.hacktx.com/api/schedule").then(response => response.json())
       .then(responseJson => {
-        console.log(responseJson)
         this.setState({schedule_data: responseJson})
       })
 
@@ -72,10 +70,8 @@ export default class HomeScreen extends Component{
     }
     else{
       this.setState({modalState: false, visible: true}, ()=>{
-        console.log(this.state.input_email)
         AsyncStorage.setItem('email', this.state.input_email, ()=>{
     		  Toast.show('Email successfully saved.');
-          console.log(this.state.input_email)
           this.setState({visible: false})
     	  })
       })
@@ -171,23 +167,31 @@ const styles = StyleSheet.create({
     height: 24,
   },
   events: {
-    marginTop: 10
+    marginTop: 10,
   },
   time: {
-    fontSize: 30
+    fontSize: 30,
+    color: "red",
+    marginLeft: 15
   },
   scheduleItem: {
     marginLeft: 10,
     marginBottom: 20,
-    marginRight: 10
-  },
-  eventName: {
-    fontSize: 20
-  },
-  description: {
+    marginRight: 10,
+    borderBottomColor: "#4A78BA",
+    borderBottomWidth: 5
 
   },
+  eventName: {
+    fontSize: 20,
+    color: "black"
+  },
+  description: {
+    color: "black"
+  },
   eventItem: {
-    marginBottom: 10
+    marginBottom: 10,
+    marginLeft: 15,
+    marginRight: 25
   }
 });

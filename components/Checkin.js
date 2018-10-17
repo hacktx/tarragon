@@ -36,7 +36,6 @@ export default class Checkin extends Component<Props> {
       this.setState({visible: true})
       AsyncStorage.getItem('email').then((value) =>
         {
-            console.log(value)
             if(value === null || value === undefined){
                 this.setState({email: "invalid_email"})
             }

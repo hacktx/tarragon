@@ -83,7 +83,7 @@ const SettingsStack = StackNavigator(
 
 
 
-const tarragon = DrawerNavigator({
+const HackTX = DrawerNavigator({
   Schedule: { screen: HomeScreenStack },
   Slack: {screen: Slack},
   Twitter: {screen: Twitter},
@@ -95,4 +95,4 @@ const tarragon = DrawerNavigator({
 });
 
 
-AppRegistry.registerComponent('tarragon', () => tarragon);
+AppRegistry.registerComponent('HackTX', () => HackTX);

@@ -36,7 +36,6 @@ export default class Settings extends Component<Props> {
 	  this.setState({visible: true})
     AsyncStorage.getItem('email').then((value) =>
       {
-          console.log(value)
           if(value === null || value === undefined){
               this.setState({email: ""})
           }
